@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo; echo
+
+ps axu |grep "pulseaudio" |grep -v "grep" |grep --color=auto -i "pulseaudio"
+
+echo; echo

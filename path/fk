@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#
+# Doesn't work...
+#
+# bash: alias: tmux: not found
+#
+# source ~/tx/lnxcli/env.sh
+#
+# This way
+# https://unix.stackexchange.com/questions/1496/why-doesnt-my-bash-script-recognize-aliases
+#
+shopt -s expand_aliases
+source /opt/lnxcli/env.sh
+
+# pkill sslocal
+
+tmux ls
+
+echo; echo
+
+ps axu |grep ssh
+
+echo; echo
+
+pkill autossh
+
+# debian=$(cat ~/.tx/sd/2020/debian)
+# sshkey="~/.tx/sd/2020/id_rsa2"
+tmux new-session -d "autossh -o GSSAPIAuthentication=no -o StrictHostKeyChecking=no -o 'PubkeyAcceptedKeyTypes +ssh-rsa' -M 22222 -D 127.0.0.1:1080 root@199.115.230.237 -p 22"
+
+tmux ls
+
+echo; echo
+
+ps axu |grep ssh

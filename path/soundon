@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo; echo
+
+ps axu |grep "pulseaudio" |grep -v "grep" |grep --color=auto -i "pulseaudio"
+
+[ $(ps axu |grep "pulseaudio --start" |grep -v grep |wc -l) -eq 0 ] && pulseaudio --start 2>/dev/null && echo "pulseaudio --start"
+
+echo; echo
+
+ps axu |grep "pulseaudio" |grep -v "grep" |grep --color=auto -i "pulseaudio"
+
+echo; echo

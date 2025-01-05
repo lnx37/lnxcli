@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+set -u
+set -x
+
+cd "$(dirname "$0")"
+
+date
+
+[ ! -f /root/w.tar.zip.gpg ] && echo "w.tar.zip.gpg doesn't exist" && exit
+
+mkdir -p /root/bk
+
+chattr -i /root/bk
+chattr -i /root/w.tar.zip.gpg
+
+path="/root/bk/$(date '+%Y%m%d')"
+
+if [ -d "$path" ]; then
+  for i in {2..10}; do
+    echo $i
+    path2="${path}_$i"
+    if [ ! -d "$path2" ]; then
+      mkdir "$path2"
+      # cp -a /root/w.tar.zip.gpg $path2/
+      mv /root/w.tar.zip.gpg $path2/
+
+      chattr -R +i $path2
+      chattr +i /root/bk
+
+      ls -lh $path2
+
+      break
+    fi
+  done
+fi
+
+
+date

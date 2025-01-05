@@ -1,0 +1,7 @@
+#!/bin/bash
+
+chattr -R +i /root/bk
+chattr +i /root/w.tar.zip.gpg
+
+lsattr -R /root/bk
+lsattr /root/w.tar.zip.gpg

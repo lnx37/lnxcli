@@ -1,0 +1,123 @@
+#!/bin/bash
+
+
+#
+# ssh
+#
+if [ -f /root/.ssh/id_rsa ]; then
+  echo "[X] SSH key is NOT clean!!!"
+else
+  echo "[O] SSH key is clean."
+fi
+
+
+#
+# cache
+# if [ $(ls /root/.cache |wc -l) -ne 0 ]; then
+#
+if [ -d /root/.cache/mozilla ] || [ -d /root/.cache/chromium ]; then
+ echo "[X] .cache directory is NOT clean!!!"
+else
+ echo "[O] .cache directory is clean."
+fi
+
+
+#
+# gpg
+# if [ $(ls -a /root |grep -i "gnupg" |wc -l) -ne 0 ]; then
+#
+if [ $(find /root/.gnupg -type f 2>/dev/null | wc -l) -ne 0 ]; then
+  echo "[X] .gnupg directory is NOT clean!!!"
+else
+  echo "[O] .gnupg directory is clean."
+fi
+
+
+#
+# .tx
+#
+if [ $(ls /root/.tx/p4* 2>/dev/null |wc -l) -ne 0 ]; then
+  echo "[X] .tx directory is NOT clean!!!"
+else
+  echo "[O] .tx directory is clean."
+fi
+
+
+#
+# bash
+#
+if [ $(cat /root/.bash_history |wc -l) -gt 5 ]; then
+  echo "[X] Bash history is NOT clean!!!"
+else
+  echo "[O] Bash history is clean."
+fi
+
+
+#
+# downloads
+#
+if [ $(ls /root/Downloads |wc -l) -ne 0 ]; then
+  echo "[X] Downloads directory is NOT clean!!!"
+else
+  echo "[O] Downloads directory is clean."
+fi
+
+
+#
+# public
+#
+if [ $(ls /root/public |wc -l) -ne 0 ]; then
+  echo "[X] public directory is NOT clean!!!"
+else
+  echo "[O] public directory is clean."
+fi
+
+
+#
+# data
+#
+# if [ $(ls /data |wc -l) -ne 0 ]; then
+#   echo "[X] data directory is NOT clean!!!"
+# else
+#   echo "[O] data directory is clean."
+# fi
+
+
+#
+# faded
+#
+if [ $(find /root/.tx/fd 2>/dev/null |wc -l) -gt 17 ]; then
+  echo "[X] fd directory is NOT clean!!!"
+else
+  echo "[O] fd directory is clean."
+fi
+
+
+#
+# mm
+#
+if [ $(find /root/.tx/mm 2>/dev/null |wc -l) -gt 0 ]; then
+ echo "[X] mm directory is NOT clean!!!"
+else
+ echo "[O] mm directory is clean."
+fi
+
+
+#
+# shadow
+#
+if [ $(find /root/.tx/sd 2>/dev/null |wc -l) -gt 0 ]; then
+  echo "[X] sd directory is NOT clean!!!"
+else
+  echo "[O] sd directory is clean."
+fi
+
+
+#
+# work
+#
+if [ $(find /root/.tx/wk 2>/dev/null |wc -l) -gt 0 ]; then
+  echo "[X] wk directory is NOT clean!!!"
+else
+  echo "[O] wk directory is clean."
+fi

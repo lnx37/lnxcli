@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -x
+
+# adb shell ls -rlth /storage/self/primary/Documents/tx/
+#
+# adb push ~/.tx/fd.tar.zip.gpg /storage/self/primary/Documents/tx/
+# adb push ~/.tx/sd.tar.zip.gpg /storage/self/primary/Documents/tx/
+# adb push ~/.tx/tx.tar.zip.gpg /storage/self/primary/Documents/tx/
+# adb push ~/.tx/wk.tar.zip.gpg /storage/self/primary/Documents/tx/
+#
+# sync
+#
+# adb shell ls -rlth /storage/self/primary/Documents/tx/
+
+# ---
+
+# adb shell ls -rlth /storage/self/primary/.tx/
+#
+# adb push ~/.tx/fd.tar.zip.gpg /storage/self/primary/.tx/
+# adb push ~/.tx/sd.tar.zip.gpg /storage/self/primary/.tx/
+# adb push ~/.tx/tx.tar.zip.gpg /storage/self/primary/.tx/
+# adb push ~/.tx/wk.tar.zip.gpg /storage/self/primary/.tx/
+#
+# sync
+#
+# adb shell ls -rlth /storage/self/primary/.tx/
+
+# ---
+
+# adb shell ls -rltha /storage/emulated/0/tx/.tx/
+#
+# adb push ~/.tx/fd.tar.zip.gpg /storage/emulated/0/tx/.tx/
+# adb push ~/.tx/sd.tar.zip.gpg /storage/emulated/0/tx/.tx/
+# adb push ~/.tx/tx.tar.zip.gpg /storage/emulated/0/tx/.tx/
+# adb push ~/.tx/wk.tar.zip.gpg /storage/emulated/0/tx/.tx/
+#
+# sync
+#
+# adb shell ls -rltha /storage/emulated/0/tx/.tx/
+
+# ---
+
+adb shell ls -rltha /storage/emulated/0/w/
+
+adb push /root/w.tar.zip.gpg /storage/emulated/0/w/
+
+sync
+
+adb shell ls -rltha /storage/emulated/0/w/

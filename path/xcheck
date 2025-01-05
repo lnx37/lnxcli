@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# -- ssh
+if [ -f /root/.ssh/id_rsa ]; then
+  echo "[X] ssh key is NOT clean!!!"
+else
+  echo "[O] ssh key is clean."
+fi
+
+# -- cache
+# if [ $(ls /root/.cache |wc -l) -ne 0 ]; then
+if [ -d /root/.cache/mozilla ] || [ -d /root/.cache/chromium ]; then
+ echo "[X] .cache directory is NOT clean!!!"
+else
+ echo "[O] .cache directory is clean."
+fi
+
+# -- gpg
+# if [ $(ls -a /root |grep -i "gnupg" |wc -l) -ne 0 ]; then
+if [ $(find /root/.gnupg -type f 2>/dev/null | wc -l) -ne 0 ]; then
+  echo "[X] .gnupg directory is NOT clean!!!"
+else
+  echo "[O] .gnupg directory is clean."
+fi
+
+# -- bash
+if [ $(cat /root/.bash_history |wc -l) -gt 5 ]; then
+  echo "[X] bash history is NOT clean!!!"
+else
+  echo "[O] bash history is clean."
+fi
+
+# -- Downloads
+if [ $(ls /root/Downloads |wc -l) -ne 0 ]; then
+  echo "[X] Downloads directory is NOT clean!!!"
+else
+  echo "[O] Downloads directory is clean."
+fi
+
+# -- Desktop
+if [ $(ls /root/Desktop |wc -l) -ne 0 ]; then
+  echo "[X] Desktop directory is NOT clean!!!"
+else
+  echo "[O] Desktop directory is clean."
+fi
+
+# -- w
+if [ $(find /root/w 2>/dev/null |wc -l) -gt 0 ]; then
+  echo "[X] wk directory is NOT clean!!!"
+else
+  echo "[O] wk directory is clean."
+fi

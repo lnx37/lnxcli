@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# set -x
+
+# cp -af /root/.tx/sd/2020/id_rsa /root/.ssh/
+
+# mkdir -p /root/.ssh
+# cp -af /root/.tx/sd/2024/githubkey/id_rsa /root/.ssh/
+# cp -af /root/.tx/sd/2024/githubkey/id_rsa.pub /root/.ssh/
+# ls -l /root/.ssh
+
+mkdir -p /root/.ssh
+cp -af /root/w/cs/lnxlife/key/linuxkey/id_rsa     /root/.ssh/
+cp -af /root/w/cs/lnxlife/key/linuxkey/id_rsa.pub /root/.ssh/
+ls -l /root/.ssh

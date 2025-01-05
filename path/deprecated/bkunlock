@@ -1,0 +1,56 @@
+#!/bin/bash
+
+[ ! -d /root/.tx ] && mkdir /root/.tx
+[ ! -d /root/.tx/bk.new ] && mkdir /root/.tx/bk.new
+[ ! -d /root/.tx/bk.old ] && mkdir /root/.tx/bk.old
+
+printf "\n"
+
+if $(ls /root/.tx/bk.old/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.old/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/bk.new/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.new/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/*.gpg
+fi
+
+# [ -f /root/.tx/bk.old/fd.tar.zip.gpg ] && chattr -i /root/.tx/bk.old/fd.tar.zip.gpg
+[ -f /root/.tx/bk.old/sd.tar.zip.gpg ] && chattr -i /root/.tx/bk.old/sd.tar.zip.gpg
+# [ -f /root/.tx/bk.old/tx.tar.zip.gpg ] && chattr -i /root/.tx/bk.old/tx.tar.zip.gpg
+# [ -f /root/.tx/bk.old/wk.tar.zip.gpg ] && chattr -i /root/.tx/bk.old/wk.tar.zip.gpg
+
+# [ -f /root/.tx/bk.new/fd.tar.zip.gpg ] && chattr -i /root/.tx/bk.new/fd.tar.zip.gpg
+[ -f /root/.tx/bk.new/sd.tar.zip.gpg ] && chattr -i /root/.tx/bk.new/sd.tar.zip.gpg
+# [ -f /root/.tx/bk.new/tx.tar.zip.gpg ] && chattr -i /root/.tx/bk.new/tx.tar.zip.gpg
+# [ -f /root/.tx/bk.new/wk.tar.zip.gpg ] && chattr -i /root/.tx/bk.new/wk.tar.zip.gpg
+
+# [ -f /root/.tx/fd.tar.zip.gpg ] && chattr -i /root/.tx/fd.tar.zip.gpg
+[ -f /root/.tx/sd.tar.zip.gpg ] && chattr -i /root/.tx/sd.tar.zip.gpg
+# [ -f /root/.tx/tx.tar.zip.gpg ] && chattr -i /root/.tx/tx.tar.zip.gpg
+# [ -f /root/.tx/wk.tar.zip.gpg ] && chattr -i /root/.tx/wk.tar.zip.gpg
+
+printf "\n"
+
+if $(ls /root/.tx/bk.old/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.old/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/bk.new/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.new/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/*.gpg
+fi

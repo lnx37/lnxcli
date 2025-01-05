@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -x
+
+chattr -R -i /mnt/.w
+
+sync
+
+rsync -av --stats --progress /root/w.tar.zip.gpg /mnt/.w/
+
+sync
+
+chattr -R +i /mnt/.w
+
+sync
+
+ls -lhR /mnt/.w

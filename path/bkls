@@ -1,0 +1,4 @@
+#!/bin/bash
+
+lsattr -R /root/bk
+lsattr /root/w.tar.zip.gpg

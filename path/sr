@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# set -x
+
+# source sr kate OR . sr kate
+
+if [ ! $# -eq 1 ]; then
+  echo "usage: $0 {keyword}"
+  # exit
+else
+  keyword="/[a-zA-Z0-9_-]*${@}[a-zA-Z0-9_-]*\.txt$"
+  result=$(\locate -ir "$keyword" |\grep df |tee /dev/tty)
+  x=$result
+fi

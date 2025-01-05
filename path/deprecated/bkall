@@ -1,0 +1,23 @@
+#!/bin/bash
+
+bkls
+
+printf "\n\n\n\n\n\n\n\n\n\n"
+
+bkunlock
+
+printf "\n\n\n\n\n\n\n\n\n\n"
+
+bkold
+
+printf "\n\n\n\n\n\n\n\n\n\n"
+
+bknew
+
+printf "\n\n\n\n\n\n\n\n\n\n"
+
+bklock
+
+printf "\n\n\n\n\n\n\n\n\n\n"
+
+bkls

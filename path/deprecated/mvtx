@@ -1,0 +1,20 @@
+#!/bin/bash
+
+printf "\n"
+
+[ ! -f /root/tx.tar.zip.gpg ] && echo "[/root/tx.tar.zip.gpg] doesn't exist" && exit
+[ -f /root/.tx/tx.tar.zip.gpg ] && echo "[/root/.tx/tx.tar.zip.gpg] already exists" && exit
+
+mv -f /root/tx.tar.zip.gpg /root/.tx/
+
+echo "Successfully moved from [/root/tx.tar.zip.gpg] to [/root/.tx/tx.tar.zip.gpg]"
+
+printf "\n"
+
+ls -lh --color=auto /root/.tx/
+
+printf "\n"
+
+lsattr /root/.tx/*.gpg
+
+printf "\n"

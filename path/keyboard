@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -x
+
+xmodmap -e "keycode 135 = Shift_R"

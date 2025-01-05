@@ -1,0 +1,59 @@
+#!/bin/bash
+
+set -x
+
+#
+# browser
+# rm -rf ~/.mozilla/firefox/
+#
+/usr/bin/which /usr/bin/bleachbit && /usr/bin/bleachbit --clean firefox.*
+/usr/bin/which /usr/bin/bleachbit && /usr/bin/bleachbit --clean chromium.*
+
+#
+# browser.firefox
+#
+# rm -rf /root/.mozilla
+rm -rf /root/.cache
+
+#
+# trash
+#
+[ -d ~/.local/share/Trash/files ] && rm -rf ~/.local/share/Trash/files/*
+[ -d ~/.local/share/Trash/info ] && rm -rf ~/.local/share/Trash/info/*
+
+#
+# files
+# rm -rf /root/branch
+#
+
+#
+# ssh
+#
+>~/.ssh/known_hosts
+[ -f ~/.ssh/id_rsa ] && rm ~/.ssh/id_rsa
+[ -f ~/.ssh/id_rsa.pub ] && rm ~/.ssh/id_rsa.pub
+
+#
+# gpg
+#
+[ -d ~/.gnupg ] && rm -rf ~/.gnupg
+
+#
+# bash
+#
+>~/.bash_history
+
+#
+# vim
+#
+>~/.viminfo
+
+#
+# git
+#
+[ -f ~/.git-credentials ] && rm ~/.git-credentials
+
+#
+# usb
+#
+sync

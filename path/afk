@@ -1,0 +1,14 @@
+#!/bin/bash
+
+bash /opt/lnxcli/path/bklock
+
+rm -f /root/p4g
+rm -f /root/p4z
+
+rm -rf /root/w
+
+pkill tmux
+
+bash /opt/lnxcli/path/xclean
+
+bash /opt/lnxcli/path/xcheck

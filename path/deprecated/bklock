@@ -1,0 +1,53 @@
+#!/bin/bash
+
+[ ! -d /root/.tx ] && mkdir /root/.tx
+[ ! -d /root/.tx/bk.new ] && mkdir /root/.tx/bk.new
+[ ! -d /root/.tx/bk.old ] && mkdir /root/.tx/bk.old
+
+printf "\n"
+
+if $(ls /root/.tx/bk.old/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.old/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/bk.new/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.new/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/bk.old/*.gpg >/dev/null 2>&1); then
+  chattr +i /root/.tx/bk.old/*.gpg
+fi
+if $(ls /root/.tx/bk.new/*.gpg >/dev/null 2>&1); then
+  chattr +i /root/.tx/bk.new/*.gpg
+fi
+if $(ls /root/.tx/*.gpg >/dev/null 2>&1); then
+  chattr +i /root/.tx/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/bk.old/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.old/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/bk.new/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/bk.new/*.gpg
+fi
+
+printf "\n"
+
+if $(ls /root/.tx/*.gpg >/dev/null 2>&1); then
+  lsattr /root/.tx/*.gpg
+fi

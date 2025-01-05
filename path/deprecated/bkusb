@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -x
+
+chattr -R -i /mnt/.tx
+
+sync
+
+rsync -av --stats --progress ~/.tx/fd.tar.zip.gpg /mnt/.tx/
+rsync -av --stats --progress ~/.tx/sd.tar.zip.gpg /mnt/.tx/
+rsync -av --stats --progress ~/.tx/tx.tar.zip.gpg /mnt/.tx/
+rsync -av --stats --progress ~/.tx/wk.tar.zip.gpg /mnt/.tx/
+
+sync
+
+chattr -R +i /mnt/.tx
+
+sync
+
+ls -lhR /mnt/.tx

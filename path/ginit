@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+set -u
+set -x
+
+# cd "$(dirname "$0")"
+
+date
+
+if [ ! -d .git ]; then
+  echo "not a git repo"
+  exit
+fi
+
+rm -rf .git
+
+git init
+
+git branch 2>/dev/null && git status -s 2>/dev/null
+
+git add . && git commit -m "init"
+
+git branch 2>/dev/null && git status -s 2>/dev/null
+
+date

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#
+# i=0; while true; do random_code=$(date +%s%N |md5sum |base64 |cut -c 1-25 |grep -v -E 'g|j|Q|y'); if [[ ! -z $random_code ]]; then echo $random_code; i=$(($i + 1)); if [[ $i == 10 ]]; then break; fi fi done
+#
+
+i=0
+while true
+do
+  random_code=$(date +%s%N |md5sum |base64 |cut -c 1-25 |grep -v -E 'g|j|Q|y')
+  if [ ! -z $random_code ]; then
+    echo $random_code
+    i=$(($i + 1))
+    if [ $i == 10 ]; then
+      break
+    fi
+  fi
+done
